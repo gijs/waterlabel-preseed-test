@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Waterlabel - Preseeded - Demo</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+
+	<style>
+		#map {
+			width: 600px;
+			height: 400px;
+		}
+	</style>
+
+	<style>body { padding: 0; margin: 0; } html, body, #map { height: 100vh; width: 100vw; }</style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<script>
+	var map = L.map('map');
+	L.tileLayer('https://{s}.tiles.mapbox.com/v3/nelenschuurmans.5641a12c/{z}/{x}/{y}.png', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>'
+	}).addTo(map);
+
+  L.tileLayer('tiles/{z}/{x}/{y}.png', {
+		maxZoom: 20,
+		attribution: 'Nelen &amp; Schuurmans'
+	}).addTo(map);
+
+  L.tileLayer('https://{s}.tiles.mapbox.com/v3/nelenschuurmans.0a5c8e74/{z}/{x}/{y}.png', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>'
+	}).addTo(map);
+
+	map.setView([52.36211830615023, 5.213441848754884], 15);
+</script>
+
+
+
+</body>
+</html>
